@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C0B-5k-v9X">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login Form-->
+        <scene sceneID="xNh-aW-8bd">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="C0B-5k-v9X" customClass="LoginForm" customModule="Test2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mQf-Qc-O8K">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LS.Center" translatesAutoresizingMaskIntoConstraints="NO" id="e0o-ot-xlc">
+                                <rect key="frame" x="123" y="64" width="168" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="168" id="Rpy-1u-2x1"/>
+                                    <constraint firstAttribute="height" constant="128" id="Tuv-4I-IFH"/>
+                                </constraints>
+                            </imageView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="URu-Q9-Wfe">
+                                <rect key="frame" x="20" y="212" width="374" height="562"/>
+                                <connections>
+                                    <segue destination="RIW-s4-Rce" kind="embed" id="WQ3-uj-bKA"/>
+                                </connections>
+                            </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan QR Code to Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dft-79-ifq">
+                                <rect key="frame" x="20" y="794" width="374" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kc2-Y8-C9o"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="URu-Q9-Wfe" firstAttribute="leading" secondItem="kc2-Y8-C9o" secondAttribute="leading" constant="20" id="1Up-ic-EEh"/>
+                            <constraint firstItem="dft-79-ifq" firstAttribute="top" secondItem="URu-Q9-Wfe" secondAttribute="bottom" constant="20" id="B9L-u1-rn1"/>
+                            <constraint firstItem="kc2-Y8-C9o" firstAttribute="trailing" secondItem="dft-79-ifq" secondAttribute="trailing" constant="20" id="BhX-Ar-1bx"/>
+                            <constraint firstItem="e0o-ot-xlc" firstAttribute="centerX" secondItem="mQf-Qc-O8K" secondAttribute="centerX" id="arg-AX-jXE"/>
+                            <constraint firstItem="e0o-ot-xlc" firstAttribute="top" secondItem="kc2-Y8-C9o" secondAttribute="top" constant="20" id="g8x-66-HfW"/>
+                            <constraint firstItem="dft-79-ifq" firstAttribute="leading" secondItem="kc2-Y8-C9o" secondAttribute="leading" constant="20" id="j7o-Be-uuj"/>
+                            <constraint firstItem="kc2-Y8-C9o" firstAttribute="bottom" secondItem="dft-79-ifq" secondAttribute="bottom" constant="50" id="k5Q-Kd-3sD"/>
+                            <constraint firstItem="kc2-Y8-C9o" firstAttribute="trailing" secondItem="URu-Q9-Wfe" secondAttribute="trailing" constant="20" id="qDt-8b-bqA"/>
+                            <constraint firstItem="URu-Q9-Wfe" firstAttribute="top" secondItem="e0o-ot-xlc" secondAttribute="bottom" constant="20" id="yGS-iR-X9G"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="ZaI-U0-SQT" kind="showDetail" identifier="logged" customClass="PresentFadeSegue" customModule="IBAnimatable" id="adK-tr-izi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YHQ-rz-vq2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-66.666666666666671" y="76.339285714285708"/>
+        </scene>
+        <!--MainNavigation-->
+        <scene sceneID="KRI-OQ-AOt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainNavigation" id="ZaI-U0-SQT" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="smt-GL-mPW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="654" y="30"/>
+        </scene>
+        <!--Barcode Scanner Login View Controller-->
+        <scene sceneID="jmm-ef-4kT">
+            <objects>
+                <viewController id="RIW-s4-Rce" customClass="BarcodeScannerLoginViewController" customModule="Test2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1q8-i1-c6H">
+                        <rect key="frame" x="0.0" y="0.0" width="374" height="562"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sJg-oY-Klc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1090" y="173"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LS.Center" width="76" height="76"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

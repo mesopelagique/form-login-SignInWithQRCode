@@ -1,0 +1,52 @@
+name: ✅ check
+on: push
+jobs:
+  lint:
+    name: 🧹 lint
+    runs-on: macos-latest
+    steps:
+      - name: ⬇️ Checkout
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 1
+      - name: ⚙️ Install swiftlint
+        run: |
+          brew install swiftlint
+        env:
+          HOMEBREW_NO_INSTALL_CLEANUP: 1
+      - name: 🧹 Code Lint
+        run: |
+          if [ ! -f ".swiftlint.yml" ]; then
+            curl -L https://raw.githubusercontent.com/4d-for-ios/check-workflow/master/form/quality/.swiftlint.yml --output .swiftlint.yml
+          fi
+          swiftlint --strict
+      - name: ⚙️ Install iblinter
+        run: |
+          brew install IBDecodable/homebrew-tap/iblinter
+        env:
+          HOMEBREW_NO_INSTALL_CLEANUP: 1
+      - name: 🧹 Storyboard Lint
+        run: |
+          if [ ! -f ".iblinter.yml" ]; then
+            curl -L https://raw.githubusercontent.com/4d-for-ios/check-workflow/master/form/quality/.iblinter.yml --output .iblinter.yml
+          fi
+          iblinter lint
+      - name: ⚙️ Install jsonlint
+        run: |
+          brew install jsonlint | tee
+      - name: 🧹 Manifest Lint
+        run: |
+          cat manifest.json | jsonlint
+  build:
+    name: 🏗 build
+    runs-on: macos-latest
+    env:
+      RELEASE_REPO: "https://raw.githubusercontent.com/4d-for-ios/check-workflow/master"
+    steps:
+      - name: ⬇️ Checkout
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 1
+      - name: 👷 Swift build
+        run: |
+          curl -fsSL $RELEASE_REPO/form/scripts/swift_build.sh | bash -s

@@ -1,0 +1,24 @@
+name: 🚀 release
+on: 
+  release:
+    types: [published]
+jobs:
+  publish:
+    name: Publish
+    runs-on: macos-latest
+    env:
+      RELEASE_REPO: "https://raw.githubusercontent.com/4d-for-ios/check-workflow/master/form/scripts"
+    steps:
+      - name: ⬇️ Checkout
+        uses: actions/checkout@master
+      - name: 📝 Edit manifest
+        run: |
+          curl -fsSL $RELEASE_REPO/release_manifest.sh | bash -s $GITHUB_REPOSITORY $GITHUB_EVENT_PATH
+      - name: 📦 Build archive
+        run: |
+          curl -fsSL $RELEASE_REPO/release_archive.sh | bash -s $GITHUB_EVENT_PATH
+      - name: ⬆️ Upload to Release
+        run: |
+          curl -fsSL $RELEASE_REPO/release_upload.sh | bash -s $GITHUB_EVENT_PATH $GITHUB_TOKEN
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

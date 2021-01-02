@@ -1,0 +1,7 @@
+included:
+- Sources
+
+disabled_rules:
+- type_name
+
+line_length: 200
