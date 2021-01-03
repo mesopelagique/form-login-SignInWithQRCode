@@ -1,6 +1,7 @@
 {
   "type": "login",
   "name": "signinwithqrcode",
+  "inject": true,
   "capabilities": {
     "camera": true
   }
