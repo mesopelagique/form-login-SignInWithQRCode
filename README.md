@@ -83,5 +83,5 @@ And according to that valid or not the mobile user authentication by returning `
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [swift-shield]: http://img.shields.io/badge/language-swift-orange.svg?style=flat
 [swift-url]: https://developer.apple.com/swift/
-[check-shield]: https://github.com/mesopelagique/4d-for-ios-form-login-SignInWithQRCode/workflows/check/badge.svg
-[check-url]: https://github.com/mesopelagique/4d-for-ios-form-login-SignInWithQRCode/actions?workflow=check
+[check-shield]: https://github.com/mesopelagique/form-login-SignInWithQRCode/workflows/check/badge.svg
+[check-url]: https://github.com/mesopelagique/form-login-SignInWithQRCode/actions?workflow=check
