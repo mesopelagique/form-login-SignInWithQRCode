@@ -86,4 +86,4 @@ And according to that valid or not the mobile user authentication by returning `
 [swift-shield]: http://img.shields.io/badge/language-swift-orange.svg?style=flat
 [swift-url]: https://developer.apple.com/swift/
 [check-shield]: https://github.com/mesopelagique/form-login-SignInWithQRCode/workflows/check/badge.svg
-[check-url]: https://github.com/mesopelagique/form-login-SignInWithQRCode/actions?workflow=check
+[check-url]: https://github.com/mesopelagique/form-login-SignInWithQRCode/workflows/%E2%9C%85%20check/badge.svg
