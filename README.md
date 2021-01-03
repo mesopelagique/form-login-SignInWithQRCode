@@ -38,8 +38,13 @@ You need to encode in your QR code some data in JSON string format.
 
 We need the current user email and some data, we could call it token.
 
+To response to an HTTP request you could send this information:
+
 ```4d
-$qrCodeData:=JSON Stringify(New object("email"; $currentUserEmail; "token"; $token))
+... // compute $token and get email
+
+$qrCodeData:=New object("email"; $currentUserEmail; "token"; $token)
+WEB SEND TEXT(JSON Stringify($qrCodeData))
 ```
 
 This token could contains an expiration date, uuid, random data, some user data, etc...
