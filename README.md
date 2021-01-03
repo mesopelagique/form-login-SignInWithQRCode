@@ -15,6 +15,8 @@ Let user scan a QR code to login to the mobile app.
 
 ## How to
 
+A demo 4d projet is [here](https://github.com/mesopelagique/Example-SignInWithQRCode)
+
 ### add this template to your project
 
 Currently it is not possible to select it in projet editor but we could add it manually
