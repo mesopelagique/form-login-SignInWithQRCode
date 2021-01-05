@@ -7,11 +7,18 @@ Let user scan a QR code to login to the mobile app.
 
 * **Type:** login
 
+<img src="Screenshot.png" width="25%" height="25%"/>
+
 ## Requirements
 
-* A website with authenticated user by email.
+* A website with authenticated user by email
 * 4D 18R6 >= : bar code scanner are available only from this version
 * Real iOS mobile device (simulator do not simulate camera)
+
+## What its not
+
+* Use mobile app already authenticated, to authenticate on a web browser on desktop (like whats app)
+* A login form to login with email or qrcode. Its is exclusively with qrcode but we could easily make a new login form with the two mode of authentication
 
 ## How to
 
