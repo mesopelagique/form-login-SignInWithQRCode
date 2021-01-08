@@ -65,7 +65,8 @@ WEB SEND TEXT(JSON Stringify($qrCodeData))
 This token could contains an expiration date, uuid, random data, some user data, etc...
 and be preferably encrypted (using `ENCRYPT BLOB` or `Crypto` class)
 
-You could store it in memory (`Storage`?) or database to be able to check it in next step.
+You could store it in memory (`Storage`?) or database to be able to check it in next step,
+or let your cryptography code do the check
 
 ### manage authentication at 4d server side
 
