@@ -66,7 +66,7 @@ open class LoginForm: QMobileUI.LoginForm {
             self.scanner?.captureFrameError()
         }
         return result
-        //return true
+        // return true
     }
 
     open override func onWillLogin () {
