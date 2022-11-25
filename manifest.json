@@ -4,5 +4,6 @@
   "inject": true,
   "capabilities": {
     "camera": true
-  }
+  },	
+  "target" : ["ios", "android"]
 }
