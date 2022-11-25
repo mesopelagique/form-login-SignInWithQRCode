@@ -25,6 +25,7 @@ class BarcodeLogin(private val activity: LoginActivity) : LoginHandler {
     private var _binding: BarcodeLoginBinding? = null
     private val binding get() = _binding!!
 
+    override val ensureValidMail = true
     private val scanner = Scanner()
 
     init {
@@ -56,6 +57,10 @@ class BarcodeLogin(private val activity: LoginActivity) : LoginHandler {
                 startScanning()
             }
         }
+    }
+     
+    override fun validate(input: String): Boolean {
+        return true
     }
 
     override fun onInputInvalid() {
