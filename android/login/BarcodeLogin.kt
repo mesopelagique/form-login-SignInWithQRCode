@@ -15,8 +15,8 @@ import com.qmobile.qmobileui.ui.SnackbarHelper
 import com.qmobile.qmobileui.ui.setOnSingleClickListener
 import com.qmobile.qmobileui.ui.setOnVeryLongClickListener
 import com.qmobile.qmobileui.utils.PermissionChecker
-import {{package}}.R
-import {{package}}.databinding.BarcodeLoginBinding
+import ___APP_PACKAGE___.R
+import ___APP_PACKAGE___.databinding.BarcodeLoginBinding
 
 @LoginForm
 @ExperimentalGetImage
