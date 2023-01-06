@@ -20,6 +20,7 @@ jobs:
           HOMEBREW_NO_INSTALL_CLEANUP: 1
       - name: 🧹 Code Lint
         run: |
+          cd ios
           if [ ! -f ".swiftlint.yml" ]; then
             curl -L https://raw.githubusercontent.com/4d-for-ios/check-workflow/master/form/quality/.swiftlint.yml --output .swiftlint.yml
           fi
@@ -31,6 +32,7 @@ jobs:
           HOMEBREW_NO_INSTALL_CLEANUP: 1
       - name: 🧹 Storyboard Lint
         run: |
+          cd ios
           if [ ! -f ".iblinter.yml" ]; then
             curl -L https://raw.githubusercontent.com/4d-for-ios/check-workflow/master/form/quality/.iblinter.yml --output .iblinter.yml
           fi
@@ -53,4 +55,5 @@ jobs:
           fetch-depth: 1
       - name: 👷 Swift build
         run: |
+          cd ios
           curl -fsSL $RELEASE_REPO/form/scripts/swift_build.sh | bash -s
