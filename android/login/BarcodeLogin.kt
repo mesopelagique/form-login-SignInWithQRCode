@@ -38,7 +38,7 @@ class BarcodeLogin(private val activity: LoginActivity) : LoginHandler {
         bindImageFromDrawable(binding.loginLogo, BaseApp.loginLogoDrawable)
 
         binding.loginLogo.setOnVeryLongClickListener {
-            activity.showRemoteUrlDialog()
+            activity.showLogoMenu()
         }
 
         binding.retryButton.setOnSingleClickListener {
