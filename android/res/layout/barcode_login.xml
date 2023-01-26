@@ -103,7 +103,6 @@
             android:id="@+id/retry_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/login_button_bottom_margin"
             android:text="@string/login_qrcode_retry"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
